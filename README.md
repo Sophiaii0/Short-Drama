@@ -1,5 +1,5 @@
 # Short Drama One-Click Storyboard
-快速制成可使用的AI短剧分镜提示词
+快速制成可使用的AI短剧分镜提示词的skill
 
 将**已确认的短剧剧本**转为可拍摄、可交给 AI 视频生成或可导出 DOCX 的逐镜头精细分镜执行稿。
 
