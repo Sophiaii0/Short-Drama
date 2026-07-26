@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Drama One-Click Storyboard"
+  short_description: "Turn locked short dramas into shot plans"
+  default_prompt: "Use $short-drama-one-click-storyboard to turn a confirmed short-drama scene into a detailed shot-by-shot execution draft."
