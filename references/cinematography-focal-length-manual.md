@@ -4,7 +4,7 @@ reference_id: SF-LENS-01
 version: 1.0.0
 updated: 2026-07-18
 applies_to:
-  - Step 6 分镜生成
+  - short-drama-one-click-storyboard 分镜执行设计
   - C 级逐镜头精细分镜
   - AI 视频逐镜提示词
   - Seedance 镜头提示词
@@ -17,7 +17,7 @@ load_when:
 
 # 影视分镜焦段与焦距使用手册
 
-本文件服务于 `script-forging` 的分镜执行层，用于把剧情、人物关系和情绪任务转换为可执行的焦段、焦距与镜头感描述。
+本文件服务于 `short-drama-one-click-storyboard` 的分镜执行层，用于把剧情、人物关系和情绪任务转换为可执行的焦段、焦距与镜头感描述。
 
 它不是“某景别必须使用某毫米数”的固定配方，也不替代导演、摄影指导和现场镜头测试。分镜可以给出明确建议，但不得把经验范围冒充唯一方案。
 
@@ -98,8 +98,7 @@ Super 35 的 35mm × 1.45 ≈ 全画幅 51mm 的视角
 
 当剧本、项目或用户没有给出相机画幅：
 
-- A 级关键分镜：只写 `广角感/标准镜头感/中长焦观察感`，避免伪精确。
-- B 级场级分镜：写 `偏广角/标准/中长焦，建议以全画幅等效视角校准`。
+- 焦段尚未确定时可写 `广角感/标准镜头感/中长焦观察感`，避免伪精确。
 - C 级逐镜头分镜：可以给出 `全画幅等效焦距`，但必须明确标注“等效”。
 - AI 视频提示词：统一采用 `full-frame-equivalent lens look`，提高跨模型的一致性。
 - 用户确认真实机型和记录格式后，再换算成实际镜头焦距。
@@ -415,12 +414,10 @@ Super 35，50mm 2× anamorphic；中近景，水平视角较宽，保留人物�
 
 原因：只有水平视角可作近似比较，垂直视角、焦外和镜头性格并不相同。
 
-## 12. 不同分镜层级的写作精度
+## 12. 执行稿的焦段写作精度
 
-| 分镜层级 | 焦段写作要求 | 示例 |
+| 交付类型 | 焦段写作要求 | 示例 |
 |:--|:--|:--|
-| A 关键分镜 | 说明视觉倾向即可 | `轻广角近机位，人物与环境并重` |
-| B 场级分镜 | 焦段类别加等效范围 | `标准偏广，全画幅等效 35-50mm` |
 | C 逐镜头精细分镜 | 画幅、实际或等效焦距、景深意图和连续性 | `Super 35 32mm，T2.8，中等景深` |
 | AI 视频执行版 | 英文镜头感、构图和防漂移约束 | `35mm full-frame-equivalent lens look, natural perspective, medium depth of field` |
 
@@ -601,18 +598,18 @@ Avoid changing lens mid-shot, unexplained optical zoom, abrupt field-of-view cha
 12. [Panavision：球面与不同压缩倍率变形镜头](https://www.panavision.com/camera-and-optics/optical-innovation)
 13. [Canon：全画幅电影机的变形宽银幕记录模式](https://community.usa.canon.com/html/assets/canon-eos-c700-ff-full-frame-white-paper-feb-6-2019.pdf?sf214346808=1&sf217297518=1)
 
-## 20. 与 `script-forging` 的集成建议
+## 20. 与 `short-drama-one-click-storyboard` 的集成
 
-若将本文件正式加入技能，可在 `SKILL.md` 的 References 表中增加：
+本文件已纳入 `SKILL.md` 的 References 路由：
 
 ```md
-| `references/cinematography-focal-length-manual.md` | 影视焦段、焦距、画幅换算、人物透视、焦段连续性与 AI 视频镜头感规则 | Step 6 分镜需要明确焦段/焦距、景深、拉焦、变焦或镜头连续性时 |
+| `references/cinematography-focal-length-manual.md` | 影视焦段、焦距、画幅换算、人物透视、焦段连续性与 AI 视频镜头感规则 | 每次 C 级执行稿需要明确镜头设计时 |
 ```
 
 建议加载顺序：
 
-1. 先加载 `shotlist-template.md`，确定分镜层级、时长和基础字段。
-2. C 级分镜再加载 `shotlist-execution-format-template.md`，锁定镜头卡片结构。
+1. 先加载 `shotlist-template.md`，确定执行范围、时长和字段内信息。
+2. 同步加载 `shotlist-execution-format-template.md`，锁定 C 级镜头卡片结构。
 3. 需要明确焦距、画幅、景深或透视时加载本文件。
 4. 涉及具体运镜或 Seedance 时再加载 `seedance-camera-movement-library.md`。
 5. 涉及电影光影时再加载 `lighting-shadow-manual.md`。
