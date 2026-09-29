@@ -5,6 +5,61 @@
 
 将**已确认的短剧剧本**转为可拍摄、可交给 AI 视频生成或可导出 DOCX 的逐镜头精细分镜执行稿。
 
+## 安装方法
+
+### 方式一：ChatGPT 网页端上传第三方 Skill
+
+以下步骤按 2026-09-29 提供的中文界面整理，适用于页面已经显示“插件 → 技能 → 添加 → 从电脑上传”的账号；入口名称和上传限制以你当前页面为准。
+
+**准备完整技能包**
+
+打开 [Short-Drama GitHub 仓库](https://github.com/Sophiaii0/Short-Drama)，点击 `Code → Download ZIP` 下载完整工程，也可使用作者提供的完整 Skill ZIP 包。
+
+本技能需要 `SKILL.md`、`agents/openai.yaml` 和 `references/` 中的六份参考文件。请上传包含这些文件的完整 ZIP，避免只上传 `SKILL.md` 导致执行模板和参考资料缺失。若自行打包，保留下方 Codex 安装部分展示的目录层级，不要把多个技能混在同一个包里。
+
+**安装步骤**
+
+1. 登录 ChatGPT 网页端，点击左侧导航栏的 **插件**。
+2. 在页面顶部切换到 **技能** 标签。
+3. 点击右上角 **添加**，在下拉菜单选择 **从电脑上传**。
+4. 在 **上传技能** 弹窗中，将准备好的 ZIP 拖入上传区域，或点击上传区域选择文件。
+5. 截图所示入口支持 `.zip`、`.skill` 文件或单独的 `SKILL.md`，每个文件最大 **25 MB**；本项目使用完整 ZIP。阅读页面提示，检查技能来源和内容后，按界面后续提示完成导入。
+6. 返回技能页面，在 **已安装** 列表中确认出现 **Short Drama One-Click Storyboard**。若未出现，请检查当前导入结果和页面提示。
+
+**安装后使用**
+
+新建聊天，在输入框输入 `@`，从技能列表中选择 **Short Drama One-Click Storyboard**，再提供已确认剧本并说明场次、交付类型和要求。ChatGPT 的技能选择方式可参考 [OpenAI 官方说明](https://learn.chatgpt.com/docs/build-skills)。
+
+选择技能后，可直接发送：
+
+```text
+把我上传的已确认剧本第36集第36-1场拆成脚本展示版详细执行稿。
+保留原台词，使用固定8项镜头卡片，卡片内部不留空行。
+先输出 Markdown；本次不生成 AI 视频执行版或 DOCX。
+```
+
+如果看不到上述网页入口，请以当前账号界面为准，或采用下方的 Codex 安装方式。安装本技能后，DOCX 渲染等交付仍取决于当前会话可用的工具与依赖，见[使用指南](使用指南.md)第 8 节。
+
+### 方式二：Codex 本地安装
+
+把整个 `short-drama-one-click-storyboard` 目录放入目标环境的 `~/.codex/skills/`，并保留以下结构：
+
+```text
+~/.codex/skills/short-drama-one-click-storyboard/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+    ├── shotlist-template.md
+    ├── shotlist-execution-format-template.md
+    ├── shotlist-gold-example-episode36.md
+    ├── cinematography-focal-length-manual.md
+    ├── lighting-shadow-manual.md
+    └── seedance-camera-movement-library.md
+```
+
+重新打开 Codex 或新建一个任务后，用 `$short-drama-one-click-storyboard` 显式调用；当用户的需求明显是逐镜头短剧分镜时，Codex 也可以自动选择该技能。
+
 ## 适用范围
 
 - 指定场景或集数的逐镜头分镜；
@@ -28,7 +83,7 @@
 
 ## 使用示例
 
-以下示例用于 Codex；ChatGPT 网页端先输入 `@` 选择 **Short Drama One-Click Storyboard**，再发送任务正文。网页安装步骤见[使用指南](使用指南.md)。
+以下示例用于 Codex；ChatGPT 网页端先输入 `@` 选择 **Short Drama One-Click Storyboard**，再发送任务正文。安装步骤见上方“安装方法”。
 
 ```text
 使用 $short-drama-one-click-storyboard 把已确认的第36集第36-1场拆成脚本展示版详细执行稿；保留原台词，按短剧快节奏控制时长。
