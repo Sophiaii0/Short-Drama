@@ -9,11 +9,9 @@
 
 ### 方式一：ChatGPT 网页端上传第三方 Skill
 
-以下步骤按 2026-09-29 提供的中文界面整理，适用于页面已经显示“插件 → 技能 → 添加 → 从电脑上传”的账号；入口名称和上传限制以你当前页面为准。
-
 **准备完整技能包**
 
-打开 [Short-Drama GitHub 仓库](https://github.com/Sophiaii0/Short-Drama)，点击 `Code → Download ZIP` 下载完整工程，也可使用作者提供的完整 Skill ZIP 包。
+打开 [Short-Drama GitHub 仓库](https://github.com/Sophiaii0/Short-Drama)，点击 `Code → Download ZIP` 下载完整工程。
 
 本技能需要 `SKILL.md`、`agents/openai.yaml` 和 `references/` 中的六份参考文件。请上传包含这些文件的完整 ZIP，避免只上传 `SKILL.md` 导致执行模板和参考资料缺失。若自行打包，保留下方 Codex 安装部分展示的目录层级，不要把多个技能混在同一个包里。
 
