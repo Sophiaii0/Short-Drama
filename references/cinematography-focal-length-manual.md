@@ -614,4 +614,4 @@ Avoid changing lens mid-shot, unexplained optical zoom, abrupt field-of-view cha
 4. 涉及具体运镜或 Seedance 时再加载 `seedance-camera-movement-library.md`。
 5. 涉及电影光影时再加载 `lighting-shadow-manual.md`。
 
-本文件只补充焦段与焦距规则，不覆盖分镜的时长、对白、O.S. 反应切镜、连续性字段、负面提示词或固定镜头卡片结构。
+本文件只补充焦段与焦距规则，不覆盖分镜的时长、对白、O.S. 反应切镜、连续性检查、负面提示词或固定镜头卡片结构。

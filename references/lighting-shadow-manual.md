@@ -2,6 +2,8 @@
 
 用途：作为电影摄影、分镜设计、AI 视频提示词、后续 Codex skill 写入的光影参考库。
 
+本手册的 LS 编号仅作为内部检索索引。输出脚本展示版、AI 视频执行版、DOCX 执行稿或视频生成提示词时，不复制 LS 编号；使用对应的光影名称和具体光源、方向、光质、对比、色温等自然语言描述。
+
 版本：v1.0  
 日期：2026-07-03  
 适用场景：电影拍摄、短片拍摄、分镜设计、AI 视频生成、Seedance 2.0 / Veo / Runway / Pika 等视频模型提示词构建
@@ -1415,4 +1417,3 @@ Avoid: harsh unflattering shadows, cold institutional lighting, green fluorescen
 Lighting: motivated night interior lighting, warm desk lamp as the key light, cool moonlight from the window, high contrast, one half of the face falling into deep shadow.
 Mood: secretive, tense, psychologically conflicted.
 ```
-
